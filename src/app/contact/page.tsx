@@ -4,7 +4,7 @@ export default function ContactPage() {
       <div className="max-w-xl w-full">
         <h1 className="text-4xl font-bold mb-6 text-center">Contact Caralogue</h1>
         <p className="text-lg mb-6 text-center">
-          Have feedback, suggestions, or want to contribute to Caralogue? We'd love to hear from you!
+          Have feedback, suggestions, or want to contribute to Caralogue? We would love to hear from you!
         </p>
         <form className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md flex flex-col gap-4">
           <label className="flex flex-col">

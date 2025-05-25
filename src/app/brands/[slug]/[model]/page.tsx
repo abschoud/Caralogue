@@ -78,8 +78,8 @@ export default function ModelPage({ params }: { params: Promise<{ slug: string; 
 
   // Use fallback values to satisfy hooks rules
   const fallbackBodyTypes = model?.bodyTypes ?? [""];
-  const fallbackTrims = model?.trims ?? [{ name: "", years: [{ year: 0, images: [""], description: "", specs: {}, features: [] }] }];
-  const fallbackYears = fallbackTrims[0]?.years ?? [{ year: 0, images: [""], description: "", specs: {}, features: [] }];
+  // const fallbackTrims = model?.trims ?? [{ name: "", years: [{ year: 0, images: [""], description: "", specs: {}, features: [] }] }];
+  // const fallbackYears = fallbackTrims[0]?.years ?? [{ year: 0, images: [""], description: "", specs: {}, features: [] }];
 
   const [selectedBodyType, setSelectedBodyType] = useState(fallbackBodyTypes[0]);
   const [selectedTrimIndex, setSelectedTrimIndex] = useState(0);

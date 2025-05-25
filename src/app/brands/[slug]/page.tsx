@@ -8,7 +8,15 @@ const brands = [
   { name: "Ferrari", slug: "ferrari", country: "Italy", luxury: "Exotic", logo: "/ferrari.png" },
 ];
 
-const modelsByBrand: Record<string, any[]> = {
+type Model = {
+  name: string;
+  slug: string;
+  image: string;
+  bodyType: string;
+  years: string;
+};
+
+const modelsByBrand: Record<string, Model[]> = {
   bmw: [
     { name: "1 Series", slug: "1-series", image: "/bmw-1series.png", bodyType: "Hatchback", years: "2004–present" },
     { name: "2 Series", slug: "2-series", image: "/bmw-2series.png", bodyType: "Coupe", years: "2014–present" },
