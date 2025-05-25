@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { use as usePromise } from "react";
 
 const brands = [
   { name: "BMW", slug: "bmw", country: "Germany", luxury: "Premium", logo: "/bmw.png" },
@@ -26,11 +27,14 @@ const modelsByBrand: Record<string, Model[]> = {
   // Add more brands and their models here
 };
 
-export default function BrandPage({ params }: { params: { slug: string } }) {
-  const brand = brands.find((b) => b.slug === params.slug);
+export default function BrandPage({ params }: { params: Promise<{ slug: string }> }) {
+  // Unwrap the promise using React's use() or use as usePromise
+  const resolvedParams = usePromise(params);
+
+  const brand = brands.find((b) => b.slug === resolvedParams.slug);
   if (!brand) return notFound();
 
-  const models = modelsByBrand[params.slug] || [];
+  const models = modelsByBrand[resolvedParams.slug] || [];
 
   return (
     <div className="min-h-screen px-4 py-12 bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
