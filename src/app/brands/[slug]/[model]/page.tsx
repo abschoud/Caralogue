@@ -69,19 +69,25 @@ const bmw3Series = {
 };
 
 export default function ModelPage({ params }: { params: Promise<{ slug: string; model: string }> }) {
-  const resolvedParams = usePromise(params); // <-- unwrap the params Promise
+  const resolvedParams = usePromise(params);
+
+  // Always define hooks first!
+  // Use fallback values in case brand/model are not found
   const brand = brands.find((b) => b.slug === resolvedParams.slug);
-  if (!brand) return notFound();
-
   const model = resolvedParams.slug === "bmw" && resolvedParams.model === "3-series" ? bmw3Series : undefined;
-  if (!model) return notFound();
 
+  // Use fallback values to satisfy hooks rules
+  const fallbackBodyTypes = model?.bodyTypes ?? [""];
+  const fallbackTrims = model?.trims ?? [{ name: "", years: [{ year: 0, images: [""], description: "", specs: {}, features: [] }] }];
+  const fallbackYears = fallbackTrims[0]?.years ?? [{ year: 0, images: [""], description: "", specs: {}, features: [] }];
 
-  // State for dropdowns
-  const [selectedBodyType, setSelectedBodyType] = useState(model.bodyTypes[0]);
+  const [selectedBodyType, setSelectedBodyType] = useState(fallbackBodyTypes[0]);
   const [selectedTrimIndex, setSelectedTrimIndex] = useState(0);
   const [selectedYearIndex, setSelectedYearIndex] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
+
+  // After hooks, check for notFound
+  if (!brand || !model) return notFound();
 
   const selectedTrim = model.trims[selectedTrimIndex];
   const selectedYear = selectedTrim.years[selectedYearIndex];
