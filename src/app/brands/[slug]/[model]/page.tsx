@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, use as usePromise } from "react"; // <-- import use as usePromise
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -68,12 +68,14 @@ const bmw3Series = {
   ],
 };
 
-export default function ModelPage({ params }: { params: { slug: string; model: string } }) {
-  const brand = brands.find((b) => b.slug === params.slug);
+export default function ModelPage({ params }: { params: Promise<{ slug: string; model: string }> }) {
+  const resolvedParams = usePromise(params); // <-- unwrap the params Promise
+  const brand = brands.find((b) => b.slug === resolvedParams.slug);
   if (!brand) return notFound();
 
-  const model = params.slug === "bmw" && params.model === "3-series" ? bmw3Series : undefined;
+  const model = resolvedParams.slug === "bmw" && resolvedParams.model === "3-series" ? bmw3Series : undefined;
   if (!model) return notFound();
+
 
   // State for dropdowns
   const [selectedBodyType, setSelectedBodyType] = useState(model.bodyTypes[0]);
