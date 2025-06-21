@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 It is an recent project I have started as a hobby.
 To see a preview of the prototype, click the following link:
-https://caralogue.vercel.app/brands/bmw/3-series
+https://caralogue.vercel.app
 
 ## Getting Started
 
