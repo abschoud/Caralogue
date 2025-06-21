@@ -3,7 +3,7 @@ import Image from "next/image";
 const brands = [
   {
     name: "BMW",
-    logo: "/bmw.png",
+    logo: "/brands/bmw/bmw.png",
     country: "Germany",
     luxury: "Premium",
     slug: "bmw",
@@ -17,7 +17,7 @@ const brands = [
   },
   {
     name: "Ferrari",
-    logo: "/ferrari.png",
+    logo: "/brands/ferrari/ferrari.png",
     country: "Italy",
     luxury: "Exotic",
     slug: "ferrari",

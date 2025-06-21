@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { use as usePromise } from "react";
 
 const brands = [
-  { name: "BMW", slug: "bmw", country: "Germany", luxury: "Premium", logo: "/bmw.png" },
-  { name: "Toyota", slug: "toyota", country: "Japan", luxury: "Mainstream", logo: "/toyota.png" },
-  { name: "Ferrari", slug: "ferrari", country: "Italy", luxury: "Exotic", logo: "/ferrari.png" },
+  { name: "BMW", slug: "bmw", country: "Germany", luxury: "Premium", logo: "/brands/bmw/bmw.png" },
+  { name: "Toyota", slug: "toyota", country: "Japan", luxury: "Mainstream", logo: "/brands/toyota/toyota.png" },
+  { name: "Ferrari", slug: "ferrari", country: "Italy", luxury: "Exotic", logo: "/brands/ferrari/ferrari.png" },
 ];
 
 type Model = {
@@ -19,10 +19,10 @@ type Model = {
 
 const modelsByBrand: Record<string, Model[]> = {
   bmw: [
-    { name: "1 Series", slug: "1-series", image: "/bmw-1series.png", bodyType: "Hatchback", years: "2004–present" },
-    { name: "2 Series", slug: "2-series", image: "/bmw-2series.png", bodyType: "Coupe", years: "2014–present" },
-    { name: "3 Series", slug: "3-series", image: "/bmw-3series.png", bodyType: "Sedan", years: "1975–present" },
-    { name: "4 Series", slug: "4-series", image: "/bmw-4series.png", bodyType: "Coupe", years: "2013–present" },
+    { name: "1 Series", slug: "1-series", image: "/models/bmw/1-series.png", bodyType: "Hatchback", years: "2004–present" },
+    { name: "2 Series", slug: "2-series", image: "/models/bmw/2-series.png", bodyType: "Coupe", years: "2014–present" },
+    { name: "3 Series", slug: "3-series", image: "/models/bmw/3-series.png", bodyType: "Sedan", years: "1975–present" },
+    { name: "4 Series", slug: "4-series", image: "/models/bmw/4-series.png", bodyType: "Coupe", years: "2013–present" },
   ],
   // Add more brands and their models here
 };
