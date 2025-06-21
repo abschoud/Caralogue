@@ -6,7 +6,7 @@ import Link from "next/link";
 
 // Example data for demonstration
 const brands = [
-  { name: "BMW", slug: "bmw", logo: "/bmw.png" },
+  { name: "BMW", slug: "bmw", logo: "/brands/bmw/bmw.png" },
 ];
 
 const bmw3Series = {
