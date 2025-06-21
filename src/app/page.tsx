@@ -18,7 +18,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="mt-12">
-          <Image src="/profile.png" alt="Caralogue hero" width={600} height={300} className="rounded shadow-lg" />
+          <Image src="/porsche.png" alt="Caralogue hero" width={600} height={300} className="rounded shadow-lg" />
         </div>
       </main>
       <footer className="py-6 text-center text-gray-500 text-sm">

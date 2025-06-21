@@ -10,7 +10,7 @@ const brands = [
   },
   {
     name: "Toyota",
-    logo: "/toyota.png",
+    logo: "/brands/toyota/toyota.png",
     country: "Japan",
     luxury: "Mainstream",
     slug: "toyota",
